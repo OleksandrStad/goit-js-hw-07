@@ -24,14 +24,17 @@ function clickPictureGallry(e) {
 
 
   const instance = basicLightbox.create(`
-      <div class="modal">
-          <p>
-            <img src="${e.target.dataset.source}" width="800" height="600">
-          </p>
-      </div>
-  `)
 
-  instance.show()
+            <img src="${e.target.dataset.source}" width="800" height="600">
+       
+  `);
+  instance.show();
+
+  containerGalleryEl.addEventListener('keydown', event => {
+    if (event.code === 'Escape') {
+      instance.close();
+    }
+  });
 
 }
 
