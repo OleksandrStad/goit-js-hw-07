@@ -16,12 +16,7 @@ containerGalleryEl.addEventListener('click', clickPictureGallry);
 function clickPictureGallry(e) {
   e.preventDefault();
 
-  const isGalleryItem = e.target.classList.contains('.gallery__item')
-  if (!isGalleryItem) {
-    return;
-  }
-
-
+  if (e.target.nodeName !== 'IMG') return;
 
   const instance = basicLightbox.create(`
 
@@ -37,8 +32,6 @@ function clickPictureGallry(e) {
   });
 
 }
-
-
 
 
 // console.log(galleryMarkup)
