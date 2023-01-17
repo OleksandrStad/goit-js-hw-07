@@ -9,7 +9,6 @@ const galleryMarkup = creatGalleryMarkup(galleryItems);
 
 containerGalleryEl.insertAdjacentHTML('beforeend', galleryMarkup);
 
-// _____________________________________________________-
 
 containerGalleryEl.addEventListener('click', clickPictureGallry);
 
@@ -25,8 +24,8 @@ function clickPictureGallry(e) {
   `);
   instance.show();
 
-  containerGalleryEl.addEventListener('keydown', event => {
-    if (event.code === 'Escape') {
+  containerGalleryEl.addEventListener('keydown', e => {
+    if (e.code === 'Escape') {
       instance.close();
     }
   });
